@@ -1,29 +1,21 @@
 import LightDarkButton from "@/components/Mode/LightDarkButton";
-import { Input, Select, Textarea } from "@mantine/core";
-import React from "react";
+import NewTask from "@/composites/newTask/newTask";
+import { Input } from "@mantine/core";
+import { useState } from "react";
+
 
 type Props = {};
 
 const Home = (props: Props) => {
+  const [value, setValue] = useState<Date | null>(null);
+
   return (
     <div>
       {/* Header */}
       <HomePageHeader />
       {/* homePageBody  */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        <div className="col-span-6 border-2 rounded-xl p-4 ">
-          <div>
-            <h1> Enter Task </h1>
-            <Input placeholder="Search Task" ></Input>
-            <Textarea label="Description " placeholder="example: to fix this keep in mind ......." />
-
-            <Select
-              label="Your favorite library"
-              placeholder="Pick value"
-              data={["Today", "Tommorow"]}
-            />
-          </div>
-        </div>
+        <NewTask/>
         <div className="col-span-6 border rounded-xl">
           <h1>how are you ?</h1>
         </div>

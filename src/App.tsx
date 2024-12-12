@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { RouterProvider } from "react-router-dom";
 import router from "./router/Routes";
 import { useAuthStore } from "./store/useAuthStore";
+import '@mantine/dates/styles.css';
 const theme = createTheme({});
 
 function App() {

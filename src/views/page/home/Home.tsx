@@ -1,4 +1,5 @@
 import LightDarkButton from "@/components/Mode/LightDarkButton";
+import TaskList from "@/components/taskList/TaskList";
 import NewTask from "@/composites/newTask/newTask";
 import { Input } from "@mantine/core";
 import { useState } from "react";
@@ -17,7 +18,8 @@ const Home = (props: Props) => {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
         <NewTask/>
         <div className="col-span-6 border rounded-xl">
-          <h1>how are you ?</h1>
+          <TaskList/>
+          <TaskList/>
         </div>
       </div>
     </div>

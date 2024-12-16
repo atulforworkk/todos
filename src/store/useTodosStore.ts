@@ -6,3 +6,10 @@ type TodoStore= {
     descriptiuon :string;
     date:string;
 }
+type TodoList ={
+    TodoStore: TodoStore[];
+}
+
+export const useTodoStore=create<TodoList>((set)=>{
+    
+})

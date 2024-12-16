@@ -24,7 +24,7 @@ export const useOrganizationStore = create<OrganizationStore>((set) => ({
 }));
 
 export const useCounterStore = create<CounterStore>(() => ({
-  count: 1,
+  count: 0,
 }));
 
 // const add user functionality

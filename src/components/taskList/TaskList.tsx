@@ -1,40 +1,32 @@
-import React from 'react'
-import { Accordion } from '@mantine/core';
-type Props = {}
+import React from "react";
+import { Accordion, Button } from "@mantine/core";
+type Props = {
+  value: string;
+  description: string;
+};
 
-const TaskList = (props: Props) => {
-
-    const groceries = [
-        {
-          emoji: '🍎',
-          value: 'Apples',
-          description:
-            'Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.',
-        },
-        {
-          emoji: '🍌',
-          value: 'Bananas',
-          description:
-            'Naturally sweet and potassium-rich fruit. Bananas are a popular choice for their energy-boosting properties and can be enjoyed as a quick snack, added to smoothies, or used in baking.',
-        },
-        {
-          emoji: '🥦',
-          value: 'Broccoli',
-          description:
-            'Nutrient-packed green vegetable. Broccoli is packed with vitamins, minerals, and fiber. It has a distinct flavor and can be enjoyed steamed, roasted, or added to stir-fries.',
-        },
-      ];
-      const items = groceries.map((item) => (
-        <Accordion.Item key={item.value} value={item.value}>
-          <Accordion.Control icon={item.emoji}>{item.value}</Accordion.Control>
-          <Accordion.Panel>{item.description}</Accordion.Panel>
-        </Accordion.Item>
-      ));
+const TaskList = ({ value, description }: Props) => {
   return (
     <Accordion radius="lg" chevronPosition="left" defaultValue="Apples">
-    {items}
-  </Accordion>
-  )
-}
+      <Accordion.Item value={value}>
+        <Accordion.Control >
+          <div className="flex justify-between items-center"><h1>
+          {value}
+          </h1>
+          <div className="flex flex-row gap-4">
+          <Button>
+            Edit
+          </Button>
+          <Button>
+            Completed
+          </Button>
+          </div>
+          </div>
+        </Accordion.Control>
+        <Accordion.Panel>{description}</Accordion.Panel>
+      </Accordion.Item>
+    </Accordion>
+  );
+};
 
-export default TaskList
+export default TaskList;
